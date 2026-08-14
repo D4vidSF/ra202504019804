@@ -77,7 +77,7 @@ POST /api/livros HTTP/1.1
 Host: biblioteca.newton.br
 Content-Type: application/json
 
-{ "id": 8, "titulo": "Domain-Driven Design", "autor": "Eric Evans" }
+{ "titulo": "Domain-Driven Design", "autor": "Eric Evans" }
 ```
 
 ```text
