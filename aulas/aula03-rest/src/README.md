@@ -6,7 +6,7 @@ refatorá-la para o design correto.
 
 ## Pré-requisitos
 
-- .NET 8 SDK (ou superior)
+- .NET 6 SDK (ou superior)
 - Postman
 
 ## Como rodar
