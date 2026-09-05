@@ -16,11 +16,11 @@ Ao final, preencham juntos a TABELA-SÍNTESE dos verbos na última página.
 
 *⏱️ Tempo: 30 minutos  |  👥 Formato: em duplas  |  Dica: o card 6 esconde uma pegadinha de quem é a culpa.*
 
-> **Nomes:** ____________________   **Turma:** ____________________   **Data:** ___ / ___ / ______
+> **Nomes:** David Silva Ferreira   **Turma:** ____________________   **Data:** 04 / 09 / 2026
 
 ## REQUISIÇÃO 01 — A prateleira inteira
 
-```text
+```text"""
 → REQUISIÇÃO
 GET /api/livros HTTP/1.1
 Host: biblioteca.newton.br
