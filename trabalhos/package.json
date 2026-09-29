@@ -1,0 +1,25 @@
+{
+  "name": "api-tasks",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Gestão de projetos e tarefas — Arquitetura de Aplicações Web 2026.2",
+  "main": "src/server.js",
+  "engines": { "node": ">=22.0.0" },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest --runInBand",
+    "test:integration": "jest --runInBand --testMatch **/integration.test.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "mongoose": "^8.19.1",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "nodemon": "^3.1.10"
+  },
+  "jest": { "testEnvironment": "node", "clearMocks": true }
+}
