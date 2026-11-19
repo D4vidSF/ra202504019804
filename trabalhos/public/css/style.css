@@ -117,6 +117,7 @@ nav a:hover {
 }
 
 main {
+  min-width:0;
   margin-left:240px;
   padding:0 48px;
   max-width:1700px;
@@ -506,12 +507,81 @@ footer {
   }
 }
 
-@media(max-width:650px) {
+/* Janelas médias: tabelas viram cartões antes de serem cortadas */
+@media(max-width:1200px) {
+  .table-wrap {
+    overflow:visible;
+  }
+  table,tbody,tr,td {
+    display:block;
+  }
+  thead {
+    position:absolute;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    clip:rect(0 0 0 0);
+  }
+  tbody tr {
+    padding:16px 20px;
+    border-bottom:1px solid #edf0eb;
+  }
+  tbody tr:last-child {
+    border-bottom:0;
+  }
+  td {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:6px 0;
+    border:0;
+    text-align:right;
+  }
+  td[data-label]::before {
+    content:attr(data-label);
+    flex:none;
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+  td:first-child {
+    display:block;
+    text-align:left;
+    padding-top:0;
+  }
+  .record-description {
+    max-width:none;
+    white-space:normal;
+    overflow-wrap:anywhere;
+  }
+  .record-name {
+    overflow-wrap:anywhere;
+  }
+  .cell-action {
+    justify-content:flex-start;
+    padding-top:10px;
+  }
+  .cell-action a {
+    display:inline-flex;
+    align-items:center;
+    min-height:44px;
+  }
+}
+
+/* Tablet e celular: menu no topo e tabelas viram cartões */
+@media(max-width:900px) {
   .sidebar {
-    position:static;
+    position:sticky;
+    top:0;
+    z-index:10;
     width:auto;
-    padding:18px 20px;
-    gap:18px;
+    padding:14px 20px;
+    gap:12px;
+    border-right:0;
+    border-bottom:1px solid var(--line);
   }
   .brand {
     font-size:20px;
@@ -526,6 +596,8 @@ footer {
   nav a {
     margin:0;
     flex:1;
+    min-height:44px;
+    align-items:center;
     padding:10px 14px;
   }
   main {
@@ -534,11 +606,45 @@ footer {
   }
   .topbar {
     height:65px;
-    font-size:9px;
+  }
+  #view {
+    min-height:0;
+    padding:28px 0 40px;
+  }
+  .panel-bar select {
+    max-width:none;
+    font-size:16px;
+  }
+  .panel-bar .field {
+    min-width:0;
+    flex:1 1 220px;
   }
   .heading {
     flex-direction:column;
+    align-items:stretch;
     gap:12px;
+  }
+  .heading .button {
+    align-self:flex-start;
+  }
+  .detail dl {
+    grid-template-columns:1fr;
+    gap:6px;
+  }
+  .detail dd {
+    margin-bottom:14px;
+  }
+}
+
+@media(max-width:650px) {
+  main {
+    padding:0 16px;
+  }
+  .sidebar {
+    padding:12px 16px;
+  }
+  .topbar {
+    font-size:9px;
   }
   .stats {
     grid-template-columns:1fr;
@@ -552,6 +658,9 @@ footer {
     margin:0;
     font-size:26px;
   }
+  .form-panel,.detail {
+    padding:20px;
+  }
   .form-grid {
     grid-template-columns:1fr;
   }
@@ -559,15 +668,21 @@ footer {
     grid-column:auto;
   }
   .panel-bar {
-    align-items:flex-start;
+    align-items:stretch;
     flex-direction:column;
   }
-  .detail dl {
-    grid-template-columns:1fr;
-    gap:10px;
+  .panel-bar .field {
+    flex:none;
   }
-  .detail dd {
-    margin-bottom:14px;
+  input,textarea,select {
+    font-size:16px;
+  }
+  .form-panel .actions .button,
+  .form-panel .actions button,
+  .detail .actions .button,
+  .detail .actions button {
+    flex:1 1 140px;
+    min-height:44px;
   }
   .semester {
     font-size:9px;
